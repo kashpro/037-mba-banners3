@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="shrink-to-fit=no, initial-scale=1.0, width=device-width">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <style>
+    body {
+      padding: 0;
+      margin: 0;
+    }
+
+    /* banner styles */
+    @font-face {
+      font-family: 'Gotham Pro';
+      src: local('GothamPro-Light'), url('./fonts/GothamPro-Light.woff2') format('woff2');
+      font-weight: 300;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Gotham Pro';
+      src: local('GothamPro-Medium'), url('./fonts/GothamPro-Medium.woff2') format('woff2');
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Gotham Pro';
+      src: local('GothamPro-Black'), url('./fonts/GothamPro-Black.woff2') format('woff2');
+      font-weight: 900;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Gotham Pro';
+      src: local('GothamPro-Bold'), url('./fonts/GothamPro-Bold.woff2') format('woff2');
+      font-weight: bold;
+      font-style: normal;
+      font-display: swap;
+    }
+    #banner * {
+      box-sizing: border-box;
+    }
+    #banner.banner {
+      font-family: 'Gotham Pro', "Arial", sans-serif;
+      color: #fff;
+      background-color: #000000;
+      min-height: 700px;
+      font-size: 15px;
+      line-height: 22.5px;
+      font-weight: 500;
+      height: 100vh;
+      height: calc(100vh - 108px);
+      margin-top: 108px;
+      background-image: 
+      url("./images/banner-4.png"),
+      url("./images/banner-1.png"),
+      url("./images/banner-2.png"),
+      url("./images/banner-3.png");
+      background-repeat: no-repeat;
+      background-position:  100% 0, -175px calc(50vh - 387px), calc(100% + 175px) calc(50vh - 387px), calc(50% + 200px);
+    }
+    @media (min-width: 576px) and (max-height: 748px) {
+      #banner.banner {
+        background-position: 100% 0, -175px -12px, calc(100% + 175px) -12px, calc(50% + 200px);
+      }
+    }
+    @media (max-width: 1023px) {
+      #banner.banner {
+        background-image: 
+        url("./images/banner-4.png"),
+        url("./images/banner-2.png"),
+        url("./images/banner-3.png");
+        background-position:  100% 0, calc(100% + 175px) calc(50vh - 387px), calc(50% + 200px);
+      }
+    }
+    @media (max-width: 919px) {
+      #banner.banner {
+        height: auto;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        background-position:  100% 0, calc(100% + 175px) calc(50%), calc(50% + 200px);
+      }
+    }
+    @media (max-width: 575px) {
+      #banner.banner {
+        margin-top: 74px;
+      }
+    }
+    #banner .banner__container {
+      margin: 0 auto;
+	    max-width: 1230px;
+      padding-left: 20px;
+      padding-right: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+       /* background-color: rgba(255,0,0,0.6); */
+    }
+    @media (max-width: 919px) {
+      #banner .banner__container {
+        max-width: 720px;
+      }
+    }
+    @media (max-width: 767px) {
+      #banner .banner__container {
+        max-width: 540px;
+      }
+    }
+    #banner .banner__box1 {
+       /* background-color: rgba(0,0,255,0.6); */
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+    @media (max-width: 919px) {
+      #banner .banner__box1 {
+        flex-direction: column;
+      }
+    }
+    #banner .banner__box11 {
+       /* background-color: rgba(255,255,0,0.6); */
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-between;
+      max-width: 550px;
+      flex-basis: 550px;
+      padding-top: 17px;
+      padding-left: 17px;
+      padding-bottom: 20px;
+    }
+    @media (max-width: 919px) {
+      #banner .banner__box11 {
+        flex-basis: auto;
+        max-width: 100%;
+        padding-left: 0;
+        margin-bottom: 75px;
+        padding-bottom: 0;
+        justify-content: center;
+      }
+    }
+    #banner .banner__box12 {
+       /* background-color: rgba(255,0,255,0.6); */
+      max-width: 440px;
+      flex-basis: 440px;
+    }
+    @media (max-width: 919px) {
+      #banner .banner__box12 {
+        flex-basis: auto;
+        max-width: 100%;
+      }
+    }
+    #banner .banner__tip {
+      font-size: 14px;
+      line-height: 17.5px;
+      color: #000;
+      padding-left: 10px;
+      padding-right: 10px;
+      margin: 0;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 0;
+      max-width: 90%;
+    }
+    @media (max-width: 919px) {
+      #banner .banner__tip {
+        margin-bottom: 40px;
+        max-width: 100%;
+      }
+    }
+    #banner .banner__tip::before {
+      position: absolute;
+      content: "";
+      width: 25px;
+      height: 25px;
+      transform: translate(-50%, -50%) rotate(45deg);
+      background-color: #00A3FF;
+      z-index: -1;
+      top: 0;
+      left: 0;
+    }
+    #banner .banner__tip::after {
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 100%;
+      background-color: #fff;
+      z-index: 0;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+    #banner .banner__head {
+      font-size: 65px;
+      line-height: 75px;
+      font-weight: 900;
+      margin-bottom: 10px;
+    }
+    @media (max-width: 1024px) {
+      #banner .banner__head {
+        font-size: 60px;
+        line-height: 65px;
+      }
+    }
+    @media (max-width: 919px) {
+      #banner .banner__head {
+        font-size: 60px;
+        line-height: 65px;
+        margin-bottom: 40px;
+      }
+    }
+    @media (max-width: 575px) {
+      #banner .banner__head {
+        font-size: 40px;
+        line-height: 1;
+      }
+    }
+    #banner .banner__text1 {
+      font-size: 16px;
+      line-height: 29px;
+    }
+    #banner .banner__link {
+      height: 60px;
+      border-radius: 30px;
+      background-color: #00A3FF;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 24px;
+      line-height: 1;font-weight: 700;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    #banner .banner__link:hover {
+      background-color: #fff;
+      color: #000;
+    }
+    #banner .banner__link1 {
+      width: 250px;
+      margin-bottom: 20px;
+    }
+    @media (max-width: 919px) {
+      #banner .banner__link1 {
+        margin-bottom: 40px;
+      }
+    }
+    #banner .banner__text2 {
+      font-size: 16px;
+      line-height: 24px;
+      margin: 0;
+      margin-bottom: 20px;
+      max-width: 90%;
+      font-weight: 300;
+    }
+    @media (max-width: 919px) {
+      #banner .banner__text2 {
+        margin-bottom: 40px;
+        max-width: 100%;
+      }
+    }
+    #banner .banner__text3 {
+      font-weight: 300;
+      margin: 0;
+      margin-bottom: 20px;
+    }
+    #banner .banner__text3 span {
+      font-weight: 900;
+    }
+    #banner .banner__list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    #banner .banner__item {
+      margin-bottom: 15px;
+    }
+    @media (max-width: 919px) {
+      #banner .banner__item {
+        margin-bottom: 20px;
+      }
+    }
+    #banner .banner__item--last {
+      margin-bottom: 0;
+    }
+    #banner .banner__subhead {
+      font-size: 48px;
+      line-height: 1;
+      margin: 0;
+      font-weight: 300;
+      margin-bottom: 5px;
+    }
+    @media (max-width: 1023px) {
+      #banner .banner__subhead {
+        font-size: 32px;
+      }
+    }
+    #banner .banner__subhead span {
+      color: #00A3FF;
+      font-weight: 900;
+    }
+    #banner .banner__text4 {
+      font-weight: 300;
+      margin: 0;
+    }
+    #banner .banner__text4--large {
+      font-size: 36px;
+      line-height: 40px;
+    }
+    @media (max-width: 1023px) {
+      #banner .banner__text4--large {
+        font-size: 32px;
+        line-height: 36px;
+      }
+    }
+    @media (max-width: 575px) {
+      #banner .banner__text4--large {
+        font-size: 20px;
+        line-height: 1;
+      }
+    }
+    #banner .banner__link2 {
+      width: 310px;
+    }
+  </style>
+</head>
+<body>
+  <div id="banner" class="banner">
+    <div class="banner__container">
+      <div class="banner__box1">
+        <div class="banner__box11">
+          <p class="banner__tip">Современное образование, отвечающее вызовам времени</p>
+          <div class="banner__head">MINI-MBA<br> Professional</div>
+          <p class="banner__text2">MINI-MBA – это зарекомендовавший себя формат бизнес-образования, позволяющий интенсивно повысить квалификацию в сфере менеджмента.</p>
+          <a href="" class="banner__link banner__link1">Поступить</a>
+          <div class="banner__text2">Только при поступлении до 31.12.2022 вы получите в подарок эксклюзивную коллекцию новогодних подарков от Сity Business School</div>
+          <a href="" class="banner__link banner__link2">Посмотреть подарок</a>
+        </div>
+        <div class="banner__box12">
+          <p class="banner__text3"><span>MINI-MBA</span> — ЭТО:</p>
+          <ul class="banner__list">
+            <li class="banner__item">
+              <h3 class="banner__subhead"><span>2022</span></h3>
+              <p class="banner__text4">Новейшая программа 2022 года</p>
+            </li>
+            <li class="banner__item">
+              <h3 class="banner__subhead"><span>Мы</span> помогаем</h3>
+              <p class="banner__text4">С трудоустройством всем вашим выпускникам после получения диплома.</p>
+            </li>
+            <li class="banner__item">
+              <h3 class="banner__subhead"><span>6</span> месяцев</h3>
+              <p class="banner__text4">Рассрочка на программу без переплат, первых взносов и сбора документов. Мы договоримся.</p>
+            </li>
+            <li class="banner__item">
+              <h3 class="banner__subhead"><span>3</span> дня</h3>
+              <p class="banner__text4">Период, когда вы можете сказать, что программа вам не подходит, и получить деньги обратно. Мы гарантируем.</p>
+            </li>
+            <li class="banner__item banner__item--last">
+              <h3 class="banner__subhead"><span>Британский диплом А1</span></h3>
+              <p class="banner__text4 banner__text4--large">в подарок до 31.12.2022</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
